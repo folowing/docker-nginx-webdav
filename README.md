@@ -7,19 +7,19 @@
 # How to use this image
 
 ```console
-$ docker run --name webdav -p 80:80 -v /media:/media -d sashgorokhov/webdav
+$ docker run --name webdav -p 80:80 -v /data:/data -d sashgorokhov/webdav
 ```
 This will start a webdav server listening on the default port of 80.
 Then access it via `http://localhost:80` or `http://host:80` in a browser.
 
-This server will serve files located in your /media folder
+This server will serve files located in your /data folder
 
 Image's supported volumes:
-- `/media` - served directory
+- `/data` - served directory
 
 To restrict access to only authorized users, you can define two environment variables: `USERNAME` and `PASSWORD`
 ```console
-$ docker run --name webdav -p 80:80 -v /media:/media -e USERNAME=webdav -e PASSWORD=webdav -d sashgorokhov/webdav
+$ docker run --name webdav -p 80:80 -v /data:/data -e USERNAME=webdav -e PASSWORD=webdav -d sashgorokhov/webdav
 ```
 
 # Supported Docker versions
